@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+
+<html lang="bn">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>নগদ বিশেষ উপহার</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+
+        /* আপনার CSS কোড এখানে অপরিবর্তিত থাকবে */
+
+        :root {
+
+            --nagad-orange: #EF4A23; /* নগদ এর প্রধান কমলা রঙ */
+
+            --nagad-dark: #333333;
+
+            --background-color: #f8f9fa; /* হালকা ধূসর ব্যাকগ্রাউন্ড */
+
+            --white-color: #ffffff;
+
+            --gray-text: #555;
+
+            --success-green: #28a745;
+
+            --border-color: #dee2e6;
+
+        }
+
+        body {
+
+            font-family: 'Hind Siliguri', sans-serif;
+
+            margin: 0;
+
+            background-color: var(--background-color);
+
+            color: var(--nagad-dark);
+
+            -webkit-font-smoothing: antialiased;
+
+            -moz-osx-font-smoothing: grayscale;
+
+        }
+
+        .container {
+
+            max-width: 600px;
+
+            margin: 0 auto;
+
+            padding: 15px;
+
+            text-align: center;
+
+        }
+
+        .header {
+
+            padding: 15px 0;
+
+            border-bottom: 1px solid var(--border-color);
+
+            margin-bottom: 20px;
+
+        }
+
+        .header img {
+
+            max-width: 110px;
+
+        }
+
+        .hero-banner img {
+
+            width: 100%;
+
+            border-radius: 12px;
+
+            margin-bottom: 25px;
+
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+
+        }
+
+        .main-title {
+
+            font-size: 1.7rem;
+
+            font-weight: 700;
+
+            color: var(--nagad-dark);
+
+            line-height: 1.4;
+
+            margin-bottom: 10px;
+
+        }
+
+        .main-title span {
+
+            color: var(--nagad-orange);
+
+        }
+
+        .subtitle {
+
+            font-size: 1.1rem;
+
+            color: var(--gray-text);
+
+            margin-bottom: 25px;
+
+        }
+
+        .gift-amount {
+
+            font-size: 3rem;
+
+            font-weight: 700;
+
+            color: var(--nagad-orange);
+
+            margin: 10px 0;
+
+            letter-spacing: -1px;
+
+        }
+
+        .timer {
+
+            background-color: #FFEFEA;
+
+            border: 1px solid var(--nagad-orange);
+
+            color: var(--nagad-orange);
+
+            padding: 12px;
+
+            border-radius: 8px;
+
+            font-weight: 600;
+
+            font-size: 1.1rem;
+
+            margin-bottom: 30px;
+
+        }
+
+        .form-section, .share-section, .success-section {
+
+            background-color: var(--white-color);
+
+            padding: 25px;
+
+            border-radius: 12px;
+
+            box-shadow: 0 5px 20px rgba(0,0,0,0.07);
+
+            margin-bottom: 30px;
+
+            border: 1px solid #f0f0f0;
+
+        }
+
+        .form-section label, .share-section h3 {
+
+            display: block;
+
+            font-size: 1.2rem;
+
+            font-weight: 600;
+
+            margin-bottom: 15px;
+
+        }
+
+        .form-section input {
+
+            width: 100%;
+
+            padding: 15px;
+
+            font-size: 1.1rem;
+
+            border: 2px solid var(--border-color);
+
+            border-radius: 8px;
+
+            box-sizing: border-box;
+
+            text-align: center;
+
+            transition: border-color 0.3s;
+
+        }
+
+        .form-section input:focus {
+
+            border-color: var(--nagad-orange);
+
+            outline: none;
+
+            box-shadow: 0 0 0 3px rgba(239, 74, 35, 0.2);
+
+        }
+
+        .submit-btn, .share-btn {
+
+            width: 100%;
+
+            padding: 16px;
+
+            font-size: 1.2rem;
+
+            font-weight: 700;
+
+            color: var(--white-color);
+
+            background: var(--nagad-orange);
+
+            border: none;
+
+            border-radius: 8px;
+
+            cursor: pointer;
+
+            margin-top: 20px;
+
+            transition: all 0.3s;
+
+            box-shadow: 0 4px 15px rgba(239, 74, 35, 0.3);
+
+        }
+
+        .submit-btn:hover, .share-btn:hover {
+
+            transform: translateY(-3px);
+
+            box-shadow: 0 7px 20px rgba(239, 74, 35, 0.4);
+
+        }
+
+        .share-btn {
+
+            background-color: var(--success-green);
+
+            box-shadow: 0 4px 15px rgba(40, 167, 69, 0.3);
+
+        }
+
+        .share-btn:hover {
+
+            background-color: #218838;
+
+            box-shadow: 0 7px 20px rgba(40, 167, 69, 0.4);
+
+        }
+
+        .comments-section {
+
+            margin-top: 40px;
+
+            text-align: left;
+
+        }
+
+        .comments-header {
+
+            font-size: 1.5rem;
+
+            font-weight: 600;
+
+            border-bottom: 1px solid var(--border-color);
+
+            padding-bottom: 10px;
+
+            margin-bottom: 20px;
+
+        }
+
+        .comment {
+
+            display: flex;
+
+            align-items: flex-start;
+
+            margin-bottom: 20px;
+
+        }
+
+        .comment img {
+
+            width: 45px;
+
+            height: 45px;
+
+            border-radius: 50%;
+
+            margin-right: 15px;
+
+            object-fit: cover;
+
+        }
+
+        .comment-content {
+
+            background-color: #f1f2f6;
+
+            border-radius: 15px;
+
+            padding: 12px 15px;
+
+            width: 100%;
+
+        }
+
+        .comment-name {
+
+            font-weight: 600;
+
+            color: #050505;
+
+        }
+
+        .comment-text {
+
+            font-size: 0.95rem;
+
+            margin: 4px 0 0 0;
+
+        }
+
+        .progress-bar {
+
+            width: 100%;
+
+            background-color: #e9ecef;
+
+            border-radius: 30px;
+
+            margin: 20px 0;
+
+            overflow: hidden;
+
+        }
+
+        .progress {
+
+            width: 0%;
+
+            height: 22px;
+
+            background-color: var(--success-green);
+
+            border-radius: 30px;
+
+            text-align: center;
+
+            color: white;
+
+            line-height: 22px;
+
+            font-size: 0.8rem;
+
+            font-weight: 600;
+
+            transition: width 0.5s ease-in-out;
+
+        }
+
+        .success-icon {
+
+            font-size: 5rem;
+
+            color: var(--success-green);
+
+            margin-bottom: 20px;
+
+        }
+
+        .hidden {
+
+            display: none;
+
+        }
+
+        .footer {
+
+            margin-top: 40px;
+
+            padding: 20px;
+
+            font-size: 0.8rem;
+
+            color: #aaa;
+
+        }
+
+    </style>
+
+    
+
+    <!-- ============================================= -->
+
+    <!--  <script type='text/javascript' src='//amuletshaped.com/8f/54/b3/8f54b3c58242532e370ba23b7a4eb5d8.js'></script>
+
+    <!-- ============================================= -->
+
+    
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <header class="header">
+
+            <img src="nagad-logo.png" alt="Nagad Logo">
+
+        </header>
+
+
+
+        <div class="hero-banner">
+
+            <img src="dr-yunus.jpg" alt="ড. মুহাম্মদ ইউনূস">
+
+        </div>
+
+        <h1 class="main-title">নোবেল বিজয়ী ড. মুহাম্মদ ইউনূসের ৮৫তম জন্মদিন উপলক্ষে <span>'নগদ'-এর বিশেষ উপহার!</span></h1>
+
+        <p class="subtitle">প্রতিটি `নগদ` গ্রাহককে দেওয়া হচ্ছে <span class="gift-amount">৳২৫০০</span> টাকা উপহার।</p>
+
+        <div class="timer">অফারটি সীমিত সময়ের জন্য!</div>
+
+
+
+        <div id="page1" class="form-section">
+
+            <form id="nagadForm">
+
+                <label for="nagadNumber">আপনার উপহারটি গ্রহণ করতে নিচের ফর্মটি পূরণ করুন:</label>
+
+                <input type="tel" id="nagadNumber" placeholder="আপনার নগদ নম্বরটি দিন (১১ ডিজিট)" pattern="01[3-9]\d{8}" required>
+
+                <button type="submit" class="submit-btn">আমার উপহারটি নিশ্চিত করুন</button>
+
+            </form>
+
+        </div>
+
+
+
+        <div id="page2" class="share-section hidden">
+
+            <h3>অভিনন্দন! আপনার ৳২৫০০ টাকার উপহারটি প্রায় প্রস্তুত।</h3>
+
+            <p>উপহারটি আপনার অ্যাকাউন্টে পাঠাতে, নিচের সহজ শর্তটি পূরণ করুন।</p>
+
+            <p><strong>শর্ত:</strong> নিচের "শেয়ার করুন" বাটনে ক্লিক করে আপনার <strong>১৫ জন বন্ধুকে</strong> WhatsApp-এ এই খুশির সংবাদটি শেয়ার করুন।</p>
+
+            <div class="progress-bar">
+
+                <div id="progressBar" class="progress">0%</div>
+
+            </div>
+
+            <p>আপনি <strong id="shareCount">০</strong>/১৫ জনকে শেয়ার করেছেন</p>
+
+            <button id="shareBtn" class="share-btn">WhatsApp-এ শেয়ার করুন</button>
+
+        </div>
+
+
+
+        <div id="page3" class="success-section hidden">
+
+            <div class="success-icon">✅</div>
+
+            <h2>ধন্যবাদ! আপনি সফলভাবে শর্ত পূরণ করেছেন।</h2>
+
+            <p>আপনার অনুরোধটি গ্রহণ করা হয়েছে। আগামী <strong>৬ থেকে ২৪ ঘণ্টার মধ্যে</strong> আপনার দেওয়া `নগদ` নম্বরে <strong>৳২৫০০ টাকা</strong> পাঠিয়ে দেওয়া হবে। অনুগ্রহ করে অপেক্ষা করুন।</p>
+
+            <p><strong>- টিম নগদ</strong></p>
+
+        </div>
+
+
+
+        <div class="comments-section">
+
+            <h2 class="comments-header">যারা ইতিমধ্যে উপহার পেয়েছেন:</h2>
+
+            
+
+            <div class="comment">
+
+                <img src="person1.jpg" alt="Person 1">
+
+                <div class="comment-content">
+
+                    <span class="comment-name">মোঃ আরিফুল ইসলাম</span>
+
+                    <p class="comment-text">প্রথমে বিশ্বাস হয়নি, কিন্তু নম্বর দেওয়ার কিছুক্ষণ পরেই শর্ত পূরণ করে টাকা পেয়েছি। ধন্যবাদ নগদ এবং ড. ইউনূস স্যারকে।</p>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="comment">
+
+                <img src="person2.jpg" alt="Person 2">
+
+                <div class="comment-content">
+
+                    <span class="comment-name">তাসনিয়া আক্তার</span>
+
+                    <p class="comment-text">Wow! Just got 2500 Taka. Thanks Nagad! ❤️</p>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="comment">
+
+                <img src="person3.jpg" alt="Person 3">
+
+                <div class="comment-content">
+
+                    <span class="comment-name">সুমন আহমেদ</span>
+
+                    <p class="comment-text">এইমাত্র পেলাম! সবাই তাড়াতাড়ি নিন, অফার সীমিত।</p>
+
+                </div>
+
+            </div>
+
+
+
+             <div class="comment">
+
+                <img src="person4.jpg" alt="Person 4">
+
+                <div class="comment-content">
+
+                    <span class="comment-name">ফারিয়া চৌধুরী</span>
+
+                    <p class="comment-text">আমি আমার বন্ধুদের শেয়ার করেছি, আশা করি তাড়াতাড়ি টাকাটা পেয়ে যাবো। খুবই এক্সাইটেড!</p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        
+
+        <footer class="footer">
+
+            © 2024 Nagad. All Rights Reserved. This is a promotional campaign.
+
+        </footer>
+
+    </div>
+
+
+
+    <script>
+
+        const page1 = document.getElementById('page1');
+
+        const page2 = document.getElementById('page2');
+
+        const page3 = document.getElementById('page3');
+
+        const nagadForm = document.getElementById('nagadForm');
+
+        const shareBtn = document.getElementById('shareBtn');
+
+        const shareCountEl = document.getElementById('shareCount');
+
+        const progressBar = document.getElementById('progressBar');
+
+        
+
+        let shareCounter = 0;
+
+        const requiredShares = 15;
+
+
+
+        nagadForm.addEventListener('submit', function(event) {
+
+            event.preventDefault();
+
+            const nagadNumber = document.getElementById('nagadNumber').value;
+
+            if (nagadNumber.length === 11 && nagadNumber.startsWith('01')) {
+
+                page1.classList.add('hidden');
+
+                page2.classList.remove('hidden');
+
+            } else {
+
+                alert('অনুগ্রহ করে একটি সঠিক ১১ ডিজিটের নগদ নম্বর দিন।');
+
+            }
+
+        });
+
+
+
+        shareBtn.addEventListener('click', function() {
+
+            const shareUrl = window.location.href;
+
+            const shareMessage = encodeURIComponent(`আমি এইমাত্র ড. ইউনূসের জন্মদিন উপলক্ষে নগদ থেকে ২৫০০ টাকা উপহারের জন্য আবেদন করেছি! তুমিও নাও। লিঙ্ক: ${shareUrl}`);
+
+            const whatsappUrl = `https://api.whatsapp.com/send?text=${shareMessage}`;
+
+            window.open(whatsappUrl, '_blank');
+
+            updateShareCount();
+
+        });
+
+
+
+        function updateShareCount() {
+
+            if (shareCounter < requiredShares) {
+
+                shareCounter++;
+
+                shareCountEl.innerText = shareCounter;
+
+                const progressPercentage = (shareCounter / requiredShares) * 100;
+
+                progressBar.style.width = progressPercentage + '%';
+
+                progressBar.innerText = Math.round(progressPercentage) + '%';
+
+                if (shareCounter === requiredShares) {
+
+                    setTimeout(() => {
+
+                        page2.classList.add('hidden');
+
+                        page3.classList.remove('hidden');
+
+                    }, 1000);
+
+                }
+
+            }
+
+        }
+
+    </script>
+
+    
+
+    <!-- ============================================= -->
+
+    <!-- <script type='text/javascript' src='//amuletshaped.com/b8/20/47/b82047769b44808f5e3426d3821258f1.js'></script>
+
+    <!-- ============================================= -->
+
+
+
+</body>
+
+</html>
